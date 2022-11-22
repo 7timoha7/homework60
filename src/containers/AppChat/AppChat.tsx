@@ -51,9 +51,11 @@ const AppChat = () => {
   return (
     <div className="AppChat">
       <UserForm onSubmit={userFormSubmit}/>
-      {messagesAll.map((item) => {
-        return <Message message={item} key={item._id}/>
-      })}
+      <div className="message-reverse-box">
+        {messagesAll.map((item) => {
+          return <Message message={item} key={item._id}/>
+        })}
+      </div>
     </div>
   );
 };
