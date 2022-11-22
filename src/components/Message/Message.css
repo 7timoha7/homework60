@@ -1,0 +1,15 @@
+.message-box {
+    border: 5px solid orangered;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.color {
+    color: orangered;
+}
+
+.user-color {
+    font-size: 20px;
+    color: black;
+}

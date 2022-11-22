@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {MessageType, MessageUserType} from "../../types";
 import UserForm from "../../components/UserForm/UserForm";
 import Message from "../../components/Message/Message";
-
+import "./AppChat.css";
 
 const url = "http://146.185.154.90:8000/messages";
 

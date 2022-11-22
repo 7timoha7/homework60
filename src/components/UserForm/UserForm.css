@@ -1,0 +1,35 @@
+.UserForm {
+    display: flex;
+    border: 5px solid #6d1b09;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input-name {
+    margin-bottom: 10px;
+    width: 95%;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.input-message{
+    margin-bottom: 10px;
+    width: 90%;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.btn-form {
+    width: 100px;
+    height: 50px;
+    background: #ff5f00;
+    border-radius: 20px;
+    align-self: center;
+}
