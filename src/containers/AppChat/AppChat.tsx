@@ -24,20 +24,28 @@ const AppChat = () => {
   useEffect(() => {
     firstListMessage().catch(console.error);
     setInterval(async () => {
-      const urlNew = await fetch(lastDateUrl);
-      const response: MessageType [] = await urlNew.json();
-      if (response.length) {
-        setMessageAll(prev => ([...prev, ...response]));
-        lastDateUrl = `http://146.185.154.90:8000/messages?datetime=${response[response.length - 1].datetime}`;
+      try {
+        const urlNew = await fetch(lastDateUrl);
+        const response: MessageType [] = await urlNew.json();
+        if (response.length) {
+          setMessageAll(prev => ([...prev, ...response]));
+          lastDateUrl = `http://146.185.154.90:8000/messages?datetime=${response[response.length - 1].datetime}`;
+        }
+      } catch (e) {
+        console.log('error', e)
       }
     }, 3000);
   }, []);
 
   const userFormSubmit = async (userInf: MessageUserType) => {
-    const body = new URLSearchParams();
-    body.set('message', userInf.message);
-    body.set('author', userInf.author);
-    await fetch('http://146.185.154.90:8000/messages', {method: 'POST', body});
+    try {
+      const body = new URLSearchParams();
+      body.set('message', userInf.message);
+      body.set('author', userInf.author);
+      await fetch('http://146.185.154.90:8000/messages', {method: 'POST', body});
+    } catch (e) {
+      console.log('error', e)
+    }
   }
 
   return (
